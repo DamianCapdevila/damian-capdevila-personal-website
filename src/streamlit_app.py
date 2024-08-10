@@ -17,7 +17,7 @@ projects_page = st.Page(
 
 chat_page = st.Page(
     page = "pages/chat.py",
-    title = "Ask questions about me!",
+    title = "Ask my assistant!",
     icon = "🤖",
 )
 
@@ -26,7 +26,7 @@ chat_page = st.Page(
 pg = st.navigation(
     {
         "Introduction": [about_page],
-        "Experience": [projects_page, chat_page],
+        "Experience": [chat_page, projects_page],
     }
 )
 
