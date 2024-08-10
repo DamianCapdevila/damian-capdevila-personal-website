@@ -3,6 +3,8 @@ import streamlit as st
 import openai
 import pdfplumber
 import os
+import copy
+
 
 OPENAI_API_KEY = os.getenv('ApiKey')
 # Set up OpenAI API key
@@ -30,41 +32,45 @@ assets_folder_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.
 # Load all CVs from the "assets" folder
 cv_content = load_cvs_from_folder(assets_folder_path)
 
-# Function to get a response from GPT-4 Turbo based on CVs
-def get_gpt4o_response(user_input, cv_content):
-    try:
-        prompt = f"""
+SYSTEM_MESSAGE = f"""
         You are an AI chatbot that provides responses based on the following CVs:
         {cv_content}
         """
+
+# Function to get a response from GPT-4o based on Damian CVs
+def get_gpt4o_response(messages):
+    try:
+        predefinedSystemMessage = {"role": "system", "content": SYSTEM_MESSAGE}
+        modifiedMessages = copy.deepcopy(messages)
+        modifiedMessages.insert(len(messages) - 1, predefinedSystemMessage)
         response = openai.chat.completions.create(
-             model="gpt-4o",  # Using GPT-4o
-            messages=[
-                {"role": "system", "content": prompt},
-                {"role": "user", "content": user_input}
-            ],
+            model="gpt-4o",  # Using GPT-4o
+            messages=modifiedMessages,
             max_tokens=1500,
             temperature=0.7,
+            stream=True 
         )
-        return response.choices[0].message.content.strip()
+        return response
     except Exception as e:
-        return f"An error occurred: {e}"
+        return str(e)
 
-st.title("💬 Ask anything about me")
-st.caption("🚀I am a Streamlit chatbot powered by OpenAI. I know Damian quite well. Feel free to ask anything about Damian!")
+st.title("💬 Ask anything about me!")
+st.caption("🚀 I know Damian Capdevila quite well. Feel free to ask anything about him!")
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
 
-if prompt := st.chat_input(placeholder="Give me a summary about Damian Capdevila"):
+if prompt := st.chat_input(placeholder="Tell me something about Damian Capdevila"):
+    full_response = ""
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
-    response = get_gpt4o_response(prompt, cv_content)
+    response = get_gpt4o_response(st.session_state.messages)
     msg = response
-    st.session_state.messages.append({"role": "assistant", "content": msg})
-    st.chat_message("assistant").write(msg)
+    with st.chat_message("assistant"):
+        full_response = st.write_stream(msg)
+    st.session_state.messages.append({"role": "assistant", "content": full_response})
 
 # Call to Action - Contact Me
 st.write("---")

@@ -17,27 +17,28 @@ def contact_form():
         submit_button = st.form_submit_button("Submit")
 
         if submit_button:
-            # Input validation
-            if not name:
-                st.warning("⚠️ Please enter your name.")
-            elif not email:
-                st.warning("⚠️ Please enter your email.")
-            elif not is_valid_email(email):
-                st.warning("⚠️ Please enter a valid email address.")
-            elif not message:
-                st.warning("⚠️ Please enter your message.")
-            else:
-                # Data is valid, send it to Google Apps Script
-                data = {
-                    "name": name,
-                    "email": email,
-                    "message": message
-                }
-                try:
-                    response = requests.post(GOOGLE_APPS_SEND_EMAIL_SCRIPT_URL, json=data)
-                    if response.status_code == 200:
-                        st.success("💌 Message sent!")
-                    else:
-                        st.error("❌ Failed to send message. Please try again later.")
-                except requests.exceptions.RequestException as e:
-                    st.error(f"❌ Failed to send message. Error: {e}")
+            with st.spinner("Sending message..."):
+                # Input validation
+                if not name:
+                    st.warning("⚠️ Please enter your name.")
+                elif not email:
+                    st.warning("⚠️ Please enter your email.")
+                elif not is_valid_email(email):
+                    st.warning("⚠️ Please enter a valid email address.")
+                elif not message:
+                    st.warning("⚠️ Please enter your message.")
+                else:
+                    # Data is valid, send it to Google Apps Script
+                    data = {
+                        "name": name,
+                        "email": email,
+                        "message": message
+                    }
+                    try:
+                        response = requests.post(GOOGLE_APPS_SEND_EMAIL_SCRIPT_URL, json=data)
+                        if response.status_code == 200:
+                            st.success("💌 Message sent!")
+                        else:
+                            st.error("❌ Failed to send message. Please try again later.")
+                    except requests.exceptions.RequestException as e:
+                        st.error(f"❌ Failed to send message. Error: {e}")
