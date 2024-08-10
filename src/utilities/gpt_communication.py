@@ -13,7 +13,7 @@ SYSTEM_MESSAGE = f"""
         {cv_content}
         """
 
-# Function to get a response from GPT-4o based on Damian CVs
+# Function to get a response from GPT-4o based on Damian CVs. We consider the last 10 messages for context.
 def get_gpt4o_response(messages):
     try:
         predefinedSystemMessage = {"role": "system", "content": SYSTEM_MESSAGE}
@@ -21,7 +21,7 @@ def get_gpt4o_response(messages):
         modifiedMessages.insert(len(messages) - 1, predefinedSystemMessage)
         response = openai.chat.completions.create(
             model="gpt-4o",
-            messages=modifiedMessages,
+            messages=modifiedMessages[-10:],
             max_tokens=1500,
             temperature=0.7,
             stream=True 
