@@ -5,14 +5,14 @@ import streamlit as st
 MAX_MESSAGE_LENGTH = 200  
 
 st.title("💬 Ask anything about Damian!")
-st.caption("🚀 I know Damian Capdevila very well. Feel free to ask anything about him!")
+st.caption("👂Pss... Did you know that Damian is providing services?")
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
 
-if prompt := st.chat_input(placeholder="Tell me something about Damian Capdevila"):
+if prompt := st.chat_input(placeholder="What services does Damian provide?"):
     if len(prompt) > MAX_MESSAGE_LENGTH:
         st.warning(f"Your message is too long. Please limit your message to {MAX_MESSAGE_LENGTH} characters.")
     else:
@@ -25,11 +25,11 @@ if prompt := st.chat_input(placeholder="Tell me something about Damian Capdevila
             full_response = st.write_stream(msg)
         st.session_state.messages.append({"role": "assistant", "content": full_response})
 
-# Call to Action - Contact Me
-st.write("---")
-st.subheader("📩 Let's Talk!")
-st.write("If you have any questions or want to work together, feel free to reach out!")
-if st.button("Contact Me"):
-    contact_form()
+    # Call to Action - Contact Me
+    st.write("---")
+    st.subheader("📩 Let's Talk")
+    st.write("If you have any questions or want to work together, feel free to reach out!")
+    if st.button("Contact Me"):
+        contact_form()
 
 
