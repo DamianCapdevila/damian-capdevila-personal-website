@@ -1,4 +1,5 @@
 import streamlit as st
+from forms.contact import contact_form
 
 # Multiple pages setup:
 
@@ -9,9 +10,9 @@ about_page = st.Page(
     default = True,
 )
 
-projects_page = st.Page(
-    page = "pages/projects.py",
-    title = "My Projects",
+services_page = st.Page(
+    page = "pages/services.py",
+    title = "Services",
     icon = "💻",
 )
 
@@ -21,15 +22,13 @@ chat_page = st.Page(
     icon = "🤖",
 )
 
-
 #Navigation setup:
 pg = st.navigation(
     {
-        "Introduction": [about_page],
-        "Experience": [chat_page, projects_page],
+        "Introduction": [about_page, chat_page],
+        "Services": [services_page],
     }
 )
-
 
 st.sidebar.text("Made with ❤ by Damian Capdevila")
 

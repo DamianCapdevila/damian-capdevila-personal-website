@@ -25,11 +25,13 @@ if prompt := st.chat_input(placeholder="What services does Damian provide?"):
             full_response = st.write_stream(msg)
         st.session_state.messages.append({"role": "assistant", "content": full_response})
 
-    # Call to Action - Contact Me - Bug found
+if len(st.session_state.messages) > 2:
+    # Call to Action - Contact Me 
     st.write("---")
     st.subheader("📩 Let's Talk")
     st.write("If you have any questions or want to work together, feel free to reach out!")
     if st.button("Contact Me"):
         contact_form()
+
 
 

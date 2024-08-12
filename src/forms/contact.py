@@ -8,13 +8,15 @@ def is_valid_email(email):
     # Simple regex for validating an email address
     return re.match(r"[^@]+@[^@]+\.[^@]+", email)
 
-@st.dialog("Contact Me")
+@st.dialog("✉ Contact Me")
 def contact_form():
     with st.form("Contact Me"):
-        name = st.text_input("Name")
-        email = st.text_input("Email")
-        message = st.text_area("Message")
-        submit_button = st.form_submit_button("Submit")
+        name = st.text_input("Name", placeholder="Jane Doe")
+        email = st.text_input("Email", placeholder="someone@example.com")
+        message = st.text_area("Message", placeholder="What´s your strategy for career transitioning?")
+        col1, col2, col3 = st.columns(3, gap="large")
+        with col2:
+            submit_button = st.form_submit_button("Submit", type="primary", use_container_width=True)
 
         if submit_button:
             with st.spinner("Sending message..."):
