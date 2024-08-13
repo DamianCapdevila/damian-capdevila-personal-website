@@ -5,7 +5,7 @@ import streamlit as st
 MAX_MESSAGE_LENGTH = 200  
 
 st.title("💬 Ask anything about Damian!")
-st.caption("👂Pss... Did you know that Damian is providing services?")
+st.caption("👂Psst... Did you know that Damian is providing services?")
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
