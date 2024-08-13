@@ -2,7 +2,7 @@ import streamlit as st
 import requests 
 import re
 
-GOOGLE_APPS_SEND_EMAIL_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz4Z1u9vGxFcKNYZg0ANFkPMHu764Mjr5k5Ynhqh-QlsJZ7J0VESbsSmNTJ_407ExMB/exec'
+GOOGLE_APPS_SEND_EMAIL_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzSIJs3dvcsAhLugSSIkRGUWeQavN3T81K52mgJwmUnv7di9exBMN5OSLQvmr39JnJHzA/exec'
 
 def is_valid_email(email):
     # Simple regex for validating an email address
