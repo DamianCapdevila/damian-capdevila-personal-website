@@ -18,10 +18,10 @@ st.subheader("Providing services", divider=True)
 col5, col6, col7 = st.columns(3, gap='small', vertical_alignment="center")
 with col5:
     if st.button("📈 Career Mentoring", type="primary", help="Book a free initial consultation!"):
-        contact_form()
+        st.switch_page("pages/services.py")
 with col6:
     if st.button("📄 Resume Reviewing", type="primary", help="Get my free resume-building cheatsheet!"):
-        contact_form()
+        st.switch_page("pages/services.py")
 
 st.subheader("About Me", divider=True)
 st.write("""*Over the last years, I [successfully transitioned from Automation Engineering into Software Development.](https://damiancapdevila.substack.com/p/from-automation-engineer-to-software) 
@@ -129,7 +129,7 @@ with st.container():
 #Disclaimer
 st.write("---")
 st.write("")
-st.write("**Disclaimer:** *All monetary estimates are based on a personal calculation. Please note that companies estimates might differ.*")
+st.caption("**Disclaimer:** *All monetary estimates are based on a personal calculation. Please note that companies estimates might differ.*")
 st.write("")
 st.write("")
 st.write("")
