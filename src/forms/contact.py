@@ -5,12 +5,11 @@ import re
 GOOGLE_APPS_SEND_EMAIL_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzSIJs3dvcsAhLugSSIkRGUWeQavN3T81K52mgJwmUnv7di9exBMN5OSLQvmr39JnJHzA/exec'
 
 def is_valid_email(email):
-    # Simple regex for validating an email address
     return re.match(r"[^@]+@[^@]+\.[^@]+", email)
 
 @st.dialog("✉ Contact Me")
 def contact_form():
-    with st.form("Contact Me"):
+    with st.form("Contact Me"): 
         name = st.text_input("Name", placeholder="Jane Doe")
         email = st.text_input("Email", placeholder="someone@example.com")
         message = st.text_area("Message", placeholder="What´s your strategy for career transitioning?")
