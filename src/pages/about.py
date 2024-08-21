@@ -4,7 +4,7 @@ from forms.contact import contact_form
 col1, col2 = st.columns(2, gap='small', vertical_alignment="top")
 
 with col1:
-    st.image("../src/assets/Damian-sin fondo-gris.png", width=300)
+    st.image("damian-capdevila-personal-website/src/assets/Damian-sin fondo-gris.png", width=300)
 with col2:
     
     
@@ -137,6 +137,6 @@ st.write("")
 st.markdown("""
     <div style="text-align: center;">
         <p>Made with 💓 by <a href="https://linkedin.com/in/damiancapdevila" target="_blank">Damian Capdevila</a></p>
-        <p><b>Damian Capdevila LLC</b> - All rights reserved</p>
+        <p><b>Damian Capdevila, LLC</b> - All rights reserved</p>
     </div>
     """, unsafe_allow_html=True)
