@@ -1,4 +1,5 @@
 import streamlit as st
+from utilities.footer import footer
 
 # URLs, durations, and prices for booking services
 INITIAL_CONSULTATION_URL = "https://cal.com/damiancapdevila/initial-consultation"
@@ -15,7 +16,6 @@ REGULAR_CONSULTATION_PRICE = "100"
 
 CONTAINER_HEIGHT = 438
 
-st.title("My Services")
 col1, col2 = st.columns(2, gap='small')
 
 # Initial Consultation
@@ -61,3 +61,12 @@ with col3:
         - Assist with coding challenges, interview preparation, and career development planning.
         """)
         st.link_button("BOOK REGULAR CONSULTATION", type="primary", use_container_width=True, url=REGULAR_CONSULTATION_URL)
+
+st.write("---")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+
+footer()

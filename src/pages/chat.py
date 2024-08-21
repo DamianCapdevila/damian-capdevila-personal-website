@@ -1,5 +1,6 @@
 from forms.contact import contact_form
 from utilities.gpt_communication import get_gpt4o_response
+from utilities.footer import footer
 import streamlit as st
 
 MAX_MESSAGE_LENGTH = 200  

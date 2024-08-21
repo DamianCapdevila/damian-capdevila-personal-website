@@ -1,5 +1,6 @@
 import streamlit as st
 from forms.contact import contact_form
+from utilities.footer import sidebar_footer
 
 # Multiple pages setup:
 
@@ -30,7 +31,7 @@ pg = st.navigation(
     }
 )
 
-st.sidebar.text("Made with ❤ by Damian Capdevila")
+sidebar_footer()
 
 #Run the navigation:
 pg.run()

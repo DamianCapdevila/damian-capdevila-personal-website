@@ -1,5 +1,6 @@
 import streamlit as st
 from forms.contact import contact_form
+from utilities.footer import footer
 
 col1, col2 = st.columns(2, gap='small', vertical_alignment="top")
 
@@ -134,9 +135,4 @@ st.write("")
 st.write("")
 st.write("")
 
-st.markdown("""
-    <div style="text-align: center;">
-        <p>Made with 💓 by <a href="https://linkedin.com/in/damiancapdevila" target="_blank">Damian Capdevila</a></p>
-        <p><b>Damian Capdevila, LLC</b> - All rights reserved</p>
-    </div>
-    """, unsafe_allow_html=True)
+footer()
