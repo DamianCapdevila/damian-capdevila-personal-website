@@ -13,7 +13,7 @@ REGULAR_CONSULTATION_URL = "https://cal.com/damiancapdevila/regular-consultation
 REGULAR_CONSULTATION_DURATION = "60"
 REGULAR_CONSULTATION_PRICE = "100"
 
-CONTAINER_HEIGHT = 498
+CONTAINER_HEIGHT = 438
 
 st.title("My Services")
 col1, col2 = st.columns(2, gap='small')
@@ -29,8 +29,6 @@ with col1:
         - Discuss your background, experience, and career goals.
         - Assess your strengths and areas to focus on for your transition to software engineering.
         - Define a roadmap for your transition.
-                 
-        **Special Offer:** Free for the first five customers to help you get started without any cost.
         """)
         st.link_button("BOOK INITIAL CONSULTATION", type="primary", use_container_width=True, url=INITIAL_CONSULTATION_URL)
 
@@ -45,8 +43,6 @@ with col2:
         - Thoroughly review your current resume with feedback tailored for software engineering roles.
         - Help craft a new resume that emphasizes your transferable skills and experience.
         - Make your CV ATS-proof.
-        
-        **Special Offer:** Free for the first five customers to help you get started without any cost.
         """)
         st.link_button("BOOK RESUME REVIEW", type="primary", use_container_width=True, url=RESUME_REVIEW_URL)
 
@@ -63,7 +59,5 @@ with col3:
         - Provide ongoing support after the initial consultation.
         - Assess your current transition status.
         - Assist with coding challenges, interview preparation, and career development planning.
-        - Get access to all support material to help your transition.
         """)
-        st.write("")
         st.link_button("BOOK REGULAR CONSULTATION", type="primary", use_container_width=True, url=REGULAR_CONSULTATION_URL)
