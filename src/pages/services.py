@@ -16,7 +16,10 @@ REGULAR_CONSULTATION_PRICE = "100"
 
 CONTAINER_HEIGHT = 438
 
+st.subheader("💻 Services", divider=True)
+st.write("*To speed up your transition to software engineering, book consultation sessions that adapt to your schedule!*")
 col1, col2 = st.columns(2, gap='small')
+col3, col4 = st.columns(2, gap='small')
 
 # Initial Consultation
 with col1:
@@ -33,7 +36,7 @@ with col1:
         st.link_button("BOOK INITIAL CONSULTATION", type="primary", use_container_width=True, url=INITIAL_CONSULTATION_URL)
 
 # Resume Review/Writing
-with col2:
+with col3:
     with st.container(height=CONTAINER_HEIGHT, border=True):
         st.subheader("**Resume Review/Writing**", anchor=False)
         st.write(f"⏳ Duration: {RESUME_REVIEW_DURATION} minutes")
@@ -46,10 +49,8 @@ with col2:
         """)
         st.link_button("BOOK RESUME REVIEW", type="primary", use_container_width=True, url=RESUME_REVIEW_URL)
 
-col3, col4 = st.columns(2, gap='small')
-
 # Regular Consultation
-with col3:
+with col2:
     with st.container(height=CONTAINER_HEIGHT, border=True):
         st.subheader("**Regular Consultation**", anchor=False)
         st.write(f"⏳ Duration: {REGULAR_CONSULTATION_DURATION} minutes")

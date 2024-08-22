@@ -5,16 +5,13 @@ from utilities.footer import footer
 col1, col2 = st.columns(2, gap='small', vertical_alignment="top")
 
 with col1:
-    st.image("damian-capdevila-personal-website/src/assets/Damian-sin fondo-gris.png", width=300)
+    st.image("damian-capdevila-personal-website/src/assets/Damian-sin fondo-verde.png", width=300)
 with col2:
     
     
     st.title("Damian Capdevila", anchor=False)
     st.write("**Software Engineer** - Empowering Engineers to Transition into Software Development with Confidence and Precision!")
         
-    if st.button("🤖 Ask my assistant about me!", use_container_width=False):
-        st.switch_page("pages/chat.py")
-
 st.subheader("Providing services", divider=True)
 col5, col6, col7 = st.columns(3, gap='small', vertical_alignment="center")
 with col5:
@@ -28,6 +25,10 @@ st.subheader("About Me", divider=True)
 st.write("""*Over the last years, I [successfully transitioned from Automation Engineering into Software Development.](https://damiancapdevila.substack.com/p/from-automation-engineer-to-software) 
             Now, I want to share my experience with you!* 
          """)
+if st.button("🤖 Ask my assistant about me!", use_container_width=False, type="primary"):
+        st.switch_page("pages/chat.py")
+st.write("")
+
 with st.expander(label="**Skills**", icon="🛠"):
     st.write("")
     st.write("""
