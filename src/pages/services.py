@@ -1,5 +1,6 @@
 import streamlit as st
 from utilities.footer import footer
+from forms.contact import contact_form
 
 # URLs, durations, and prices for booking services
 INITIAL_CONSULTATION_URL = "https://cal.com/damiancapdevila/initial-consultation"
@@ -18,6 +19,7 @@ CONTAINER_HEIGHT = 438
 
 st.subheader("💻 Services", divider=True)
 st.write("*To speed up your transition to software engineering, book consultation sessions that adapt to your schedule!*")
+st.caption("""<p>Questions? See <a href="#FAQ">FAQ Section</a></p>""", unsafe_allow_html=True)
 col1, col2 = st.columns(2, gap='small')
 col3, col4 = st.columns(2, gap='small')
 
@@ -62,6 +64,33 @@ with col2:
         - Assist with coding challenges, interview preparation, and career development planning.
         """)
         st.link_button("BOOK REGULAR CONSULTATION", type="primary", use_container_width=True, url=REGULAR_CONSULTATION_URL)
+
+st.subheader("FAQ", anchor="FAQ", divider=True)
+with st.expander("How do I know this services are for me?"):
+    st.write("Because bla bla bla")
+with st.expander("How many consultations does it normally take?"):
+    st.write("Because bla bla bla")
+with st.expander("How long does it normally take to get into software engineering?"):
+    st.write("Because bla bla bla")
+with st.expander("What is the best language to learn?"):
+    st.write("Because bla bla bla")
+with st.expander("What payment methods do you accept?"):
+    st.write("Because bla bla bla")
+
+st.write("---")
+st.write("")
+
+col5, col6 = st.columns(2, gap="small")
+
+with col5:
+  st.write("**Have any other questions?**")
+  if st.button("🤖 Ask my assistant", type="primary"):
+    st.switch_page("pages/chat.py")
+
+with col6:
+  st.write("**Prefer to talk to a human?**")
+  if st.button("✉️ Send me a message!", type="primary"):
+    contact_form()
 
 st.write("---")
 st.write("")
