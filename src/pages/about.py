@@ -12,7 +12,8 @@ with col2:
     st.title("Damian Capdevila", anchor=False)
     st.write("**Software Engineer** - Empowering Engineers to Transition into Software Development with Confidence and Precision!")
         
-st.subheader("Providing services", divider=True)
+st.subheader("Providing Services", divider=True)
+st.write("*Are you ready to start your transition into software engineering?*")
 col5, col6, col7 = st.columns(3, gap='small', vertical_alignment="center")
 with col5:
     if st.button("📈 Career Mentoring", type="primary", help="Book a free initial consultation!"):
@@ -20,7 +21,9 @@ with col5:
 with col6:
     if st.button("📄 Resume Reviewing", type="primary", help="Get my free resume-building cheatsheet!"):
         st.switch_page("pages/services.py")
+st.caption("""<p>Questions? See <a href="services#FAQ" target="_self">FAQ Section</a></p>""", unsafe_allow_html=True)
 
+st.write("")
 st.subheader("About Me", divider=True)
 st.write("""*Over the last years, I [successfully transitioned from Automation Engineering into Software Development.](https://damiancapdevila.substack.com/p/from-automation-engineer-to-software) 
             Now, I want to share my experience with you!* 
@@ -120,13 +123,12 @@ with st.expander("**Education**", icon="👨‍🎓"):
     - **University of Michigan:** *Python for Everybody Specialization* – [Credential](https://coursera.org/share/42c74c2cf60501210dd5f0d1c214a541)
     """)
 
-# Call to Action - Contact Me
-st.write("---")
-st.subheader("📩 Let's Talk!")
-st.write("*If you have any questions or want to work together, feel free to reach out!*")
-with st.container():
-    if st.button("**Contact Me**", type="primary", use_container_width=True):
-        contact_form()
+st.write("")
+# Call to Action - Book an appointment
+st.subheader("🗓️ Book an Appointment", divider=True)
+st.write("Are you ready to start your transition into software engineering?")
+if st.button("**BOOK AN APPOINTMENT**", type="primary", use_container_width=True):
+    st.switch_page("pages/services.py")
 
 #Disclaimer
 st.write("---")

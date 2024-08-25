@@ -66,30 +66,53 @@ with col2:
         st.link_button("BOOK REGULAR CONSULTATION", type="primary", use_container_width=True, url=REGULAR_CONSULTATION_URL)
 
 st.subheader("FAQ", anchor="FAQ", divider=True)
-with st.expander("How do I know this services are for me?"):
-    st.write("Because bla bla bla")
-with st.expander("How many consultations does it normally take?"):
-    st.write("Because bla bla bla")
-with st.expander("How long does it normally take to get into software engineering?"):
-    st.write("Because bla bla bla")
-with st.expander("What is the best language to learn?"):
-    st.write("Because bla bla bla")
-with st.expander("What payment methods do you accept?"):
-    st.write("Because bla bla bla")
+# FAQ 1
+with st.expander("**How do I know if these services are right for me?**"):
+    st.write("""
+    *If you're an engineer from a different field, such as automation, and you're considering a transition to software engineering, my services are designed for you. During the initial consultation, we discuss your background and career goals to ensure that the services align with your needs. My goal is to help you make a smooth transition into the software engineering field.*
+    """)
 
-st.write("---")
-st.write("")
+# FAQ 2
+with st.expander("**How many consultations does it typically take?**"):
+    st.write("""
+    *The number of consultations depends on your individual needs and how quickly you progress. Some clients might require just one or two sessions for specific guidance, while others may benefit from ongoing support over several months. We can discuss a customized plan during the initial consultation.*
+    """)
 
-col5, col6 = st.columns(2, gap="small")
+# FAQ 3
+with st.expander("**How long does it usually take to transition into software engineering?**"):
+    st.write("""
+    *The time it takes to transition into software engineering varies depending on your current skills, the time you can dedicate to learning, and the specific area of software engineering you're targeting. On average, it could take anywhere from a few months to a year with consistent effort and the right guidance.*
+    """)
 
-with col5:
-  st.write("**Have any other questions?**")
-  if st.button("🤖 Ask my assistant", type="primary"):
-    st.switch_page("pages/chat.py")
+# FAQ 4
+with st.expander("**What programming language should I start with?**"):
+    st.write("""
+    *The best programming language to start with depends on your career goals. If you're interested in web development, Python and JavaScript are popular choices. For systems programming, C++ might be more suitable. During our consultations, I can help you choose the right language based on your background and objectives.*
+    """)
+
+# FAQ 5
+with st.expander("**What payment methods do you accept?**"):
+    st.write("""
+    *I accept various payment methods, including credit/debit cards, PayPal, and bank transfers. If you have any specific requirements or preferences, feel free to discuss them during our consultation.*
+    """)
+
+# FAQ 6
+with st.expander("**What is the difference between an initial and a regular consultation?**"):
+    st.write("""
+    *The initial consultation is designed to understand your background, career goals, and create a tailored roadmap for your transition into software engineering. The regular consultations are follow-up sessions where we assess your progress, tackle any challenges you're facing, and continue to refine your transition plan.*
+    """)
+
+st.subheader("Further Assistance", divider=True)
+st.write("*In case you have questions that are not listed in the FAQ, feel free to ask my assistant. If you prefer talking to a human, contact me!*")
+
+col5, col6, col7, col8 = st.columns([1, 4, 4, 1], gap="medium")
 
 with col6:
-  st.write("**Prefer to talk to a human?**")
-  if st.button("✉️ Send me a message!", type="primary"):
+  if st.button("🤖 Ask my assistant", type="primary", use_container_width=True):
+    st.switch_page("pages/chat.py")
+
+with col7:
+  if st.button("✉️ Contact me!", type="primary", use_container_width=True):
     contact_form()
 
 st.write("---")

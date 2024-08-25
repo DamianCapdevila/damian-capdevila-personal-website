@@ -27,12 +27,12 @@ if prompt := st.chat_input(placeholder="What services does Damian provide?"):
         st.session_state.messages.append({"role": "assistant", "content": full_response})
 
 if len(st.session_state.messages) > 2:
-    # Call to Action - Contact Me 
+    # Call to Action - Hire me 
     st.write("---")
-    st.subheader("📩 Let's Talk")
-    st.write("If you have any questions or want to work together, feel free to reach out!")
-    if st.button("Contact Me"):
-        contact_form()
+    st.subheader("🗓️ Book an Appointment")
+    st.write("Are you ready to start your transition into software engineering?")
+    if st.button("🗓️ Book an Appointment", type="primary"):
+        st.switch_page("pages/services.py")
 
 
 
