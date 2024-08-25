@@ -127,7 +127,7 @@ st.write("")
 # Call to Action - Book an appointment
 st.subheader("🗓️ Book an Appointment", divider=True)
 st.write("Are you ready to start your transition into software engineering?")
-if st.button("**BOOK AN APPOINTMENT**", type="primary", use_container_width=True):
+if st.button("**BOOK AN APPOINTMENT**", type="primary"):
     st.switch_page("pages/services.py")
 
 #Disclaimer

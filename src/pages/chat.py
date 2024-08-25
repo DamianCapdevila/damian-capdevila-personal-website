@@ -31,7 +31,7 @@ if len(st.session_state.messages) > 2:
     st.write("---")
     st.subheader("🗓️ Book an Appointment")
     st.write("Are you ready to start your transition into software engineering?")
-    if st.button("🗓️ Book an Appointment", type="primary"):
+    if st.button("🗓️ BOOK AN APPOINTMENT", type="primary"):
         st.switch_page("pages/services.py")
 
 
