@@ -15,6 +15,10 @@ REGULAR_CONSULTATION_URL = "https://cal.com/damiancapdevila/regular-consultation
 REGULAR_CONSULTATION_DURATION = "60"
 REGULAR_CONSULTATION_PRICE = "100"
 
+LINKEDIN_REVIEW_URL = "https://cal.com/damiancapdevila/resume-review-writing"
+LINKEDIN_REVIEW_DURATION = "30"
+LINKEDIN_REVIEW_PRICE = "35"
+
 CONTAINER_HEIGHT = 438
 
 st.subheader("💻 Services", divider=True)
@@ -64,6 +68,20 @@ with col2:
         - Assist with coding challenges, interview preparation, and career development planning.
         """)
         st.link_button("BOOK REGULAR CONSULTATION", type="primary", use_container_width=True, url=REGULAR_CONSULTATION_URL)
+
+# Resume Review/Writing
+with col4:
+    with st.container(height=CONTAINER_HEIGHT, border=True):
+        st.subheader("**LinkedIn Profile Review**", anchor=False)
+        st.write(f"⏳ Duration: {LINKEDIN_REVIEW_DURATION} minutes")
+        st.write(f"💶 Price: {LINKEDIN_REVIEW_PRICE} Euros")
+        st.write(f"""
+        **📄 What We Do:**
+        - Carefully review your current LinkedIn profile with feedback tailored for software engineering roles.
+        - Enhance the profile to make opportunities come to you.
+        - Help you build a personal brand.
+        """)
+        st.link_button("BOOK LINKEDIN REVIEW", type="primary", use_container_width=True, url=LINKEDIN_REVIEW_URL)
 
 st.subheader("FAQ", anchor="FAQ", divider=True)
 # FAQ 1
