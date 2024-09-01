@@ -3,7 +3,7 @@ import os
 import copy
 from utilities import file_handler
 
-OPENAI_API_KEY = os.getenv('ApiKey', "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")
+OPENAI_API_KEY = os.getenv('ApiKey')
 openai.api_key = OPENAI_API_KEY  
 
 # Load CVs from the "assets" folder
