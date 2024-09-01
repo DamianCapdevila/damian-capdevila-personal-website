@@ -23,7 +23,7 @@ chat_page = st.Page(
     icon = "🤖",
 )
 
-st.logo("damian-capdevila-personal-website/src/assets/background-removed.png")
+st.logo("assets/background-removed.png")
 #Navigation setup:
 pg = st.navigation(
     {

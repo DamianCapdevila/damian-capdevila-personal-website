@@ -5,7 +5,7 @@ from utilities.footer import footer
 col1, col2 = st.columns(2, gap='small', vertical_alignment="top")
 
 with col1:
-    st.image("damian-capdevila-personal-website/src/assets/Damian-sin fondo-verde.png", width=300)
+    st.image("assets/Damian-sin fondo-verde.png", width=300)
 with col2:
     
     
