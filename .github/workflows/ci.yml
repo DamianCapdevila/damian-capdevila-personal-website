@@ -23,6 +23,6 @@ jobs:
                 pip install -r requirements.txt
 
             - name: Run Streamlit app
-              run: streamlit run ./src/streamlit_app.py --server.headless true
+              run: timeout 10s streamlit run ./src/streamlit_app.py --server.headless true
 
 
