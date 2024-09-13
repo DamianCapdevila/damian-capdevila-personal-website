@@ -2,10 +2,12 @@ import streamlit as st
 from forms.contact import contact_form
 from utilities.footer import footer
 
+HEADSHOT_URL = 'https://raw.githubusercontent.com/DamianCapdevila/damian-capdevila-personal-website-assets/main/Damian-sin%20fondo-gris.png'
+
 col1, col2 = st.columns(2, gap='small', vertical_alignment="top")
 
 with col1:
-    st.image("assets/Damian-sin fondo-verde.png", width=300)
+    st.image(HEADSHOT_URL, output_format="PNG", width=300)
 with col2:
     
     
