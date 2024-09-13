@@ -4,9 +4,9 @@ import copy
 from utilities import file_handler
 
 OPENAI_API_KEY = os.getenv('ApiKey')
-openai.api_key = OPENAI_API_KEY  
+openai.api_key = OPENAI_API_KEY
+openai.version = 'gpt-4o-2024-08-06'  
 
-# Load CVs from the "assets" folder
 cv_content = file_handler.load_cvs_from_folder(file_handler.assets_folder_path)
 SYSTEM_MESSAGE = f"""
         You are an AI chatbot that provides responses based on the following CVs:
