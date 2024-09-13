@@ -15,7 +15,7 @@ REGULAR_CONSULTATION_URL = "https://cal.com/damiancapdevila/regular-consultation
 REGULAR_CONSULTATION_DURATION = "60"
 REGULAR_CONSULTATION_PRICE = "100"
 
-LINKEDIN_REVIEW_URL = "https://cal.com/damiancapdevila/resume-review-writing"
+LINKEDIN_REVIEW_URL = "https://cal.com/damiancapdevila/linkedin-profile-review"
 LINKEDIN_REVIEW_DURATION = "30"
 LINKEDIN_REVIEW_PRICE = "35"
 
