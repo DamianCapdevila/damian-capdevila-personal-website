@@ -50,18 +50,22 @@ with st.expander(label="**Experience**", icon="👨‍🏭"):
     with st.container(border=True):
         st.write("**📋 Summary**")
         st.write("""
-                    Greetings 👋🏻! I'm Damián Capdevila, an accomplished electronic engineer with **seven years of experience spanning software development, 
-                    solutions engineering, presales, and academic research**. My current focus is on **engineering enterprise-grade software using C# .NET, 
+                    - Greetings 👋🏻! I'm Damián Capdevila, an accomplished electronic engineer with **Seven years of experience spanning software development, 
+                    solutions engineering, presales, automation engineering, and academic research**. 
+                    
+                    - My current focus is on **engineering enterprise-grade software, 
                     serving a global user base.**
 
-                    As an Italian and Argentinian dual citizen, **I offer versatility and can work in the EU, LATAM, or GLOBALLY REMOTE.** 
-                    **Fluent in Spanish and English**, I've worked in English-centric environments for over four years, 
+                    - As an Italian and Argentinian dual citizen, **I offer versatility and can work in the EU, LATAM, or GLOBALLY REMOTE 🌎.** 
+                    **Fluent in Spanish and English**, 
+                    
+                    - I've worked in English-centric environments for over four years, 
                     including hybrid/remote roles at Siemens' International Hubs.
                 """)
     
     with st.container(border=True):
-        st.write("**🔎 Details**",)
-        st.write("Visit my [LinkedIn Profile](https://www.linkedin.com/in/damiancapdevila)")
+        st.write("**🔎 Details**")
+        st.write("- For further details, you can visit my [LinkedIn Profile](https://www.linkedin.com/in/damiancapdevila) 😎")
         st.write("")
 
 with st.expander("**Education**", icon="👨‍🎓"):
