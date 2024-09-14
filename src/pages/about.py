@@ -4,7 +4,7 @@ from forms.contact import contact_form
 import utilities.helper
 
 HEADSHOT_URL = 'https://raw.githubusercontent.com/DamianCapdevila/damian-capdevila-personal-website-assets/main/Damian-sin%20fondo-gris.png'
-UVP_TEXT = f"**I help Engineers Unlock the Freedom, Flexibility, and Higher Income of a Software Career!** 💻🌎"
+UVP_TEXT = f"**I help Engineers Unlock the Freedom, Flexibility, and High Income of a Software Career!** 💻🌎"
 UVP_EXPLANATION = f"**Thrive in the digital age** by **transforming your engineering experience** into a Software Engineering Powerhouse, **without the fear or uncertainty.**"
 ACTIONABLE_STEPS_URL = 'https://damiancapdevila.substack.com/i/144652439/actionable-steps-if-you-want-to-make-the-transition'
 col1, col2 = st.columns(2, gap='small', vertical_alignment="top")
