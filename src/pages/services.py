@@ -121,12 +121,12 @@ with st.expander("**What is the difference between an initial and a regular cons
     """)
 
 st.subheader("Further Assistance", divider=True)
-st.write("*In case you have questions that are not listed in the FAQ, feel free to ask my assistant. If you prefer talking to a human, contact me!*")
+st.write("*In case you have questions that are not listed in the FAQ, feel free to ask my assistant. **If you prefer talking to a human, contact me!***")
 
 col5, col6, col7, col8 = st.columns([1, 4, 4, 1], gap="medium")
 
 with col6:
-  if st.button("🤖 Ask my assistant", type="primary", use_container_width=True):
+  if st.button("🤖 **Ask my assistant**", type="secondary", use_container_width=True):
     st.switch_page("pages/chat.py")
 
 with col7:
