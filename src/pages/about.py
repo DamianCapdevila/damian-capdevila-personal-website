@@ -57,10 +57,9 @@ with st.expander(label="**Experience**", icon="👨‍🏭"):
                     serving a global user base.**
 
                     - As an Italian and Argentinian dual citizen, **I offer versatility and can work in the EU, LATAM, or GLOBALLY REMOTE 🌎.** 
-                    **Fluent in Spanish and English**, 
                     
-                    - I've worked in English-centric environments for over four years, 
-                    including hybrid/remote roles at Siemens' International Hubs.
+                    - **Fluent in Spanish and English**, I've worked in English-Centric environments for over four years, 
+                    including **hybrid/remote** roles at Siemens' International Hubs.
                 """)
     
     with st.container(border=True):
@@ -93,7 +92,7 @@ if st.button("**BOOK AN APPOINTMENT**", type="primary"):
 #Disclaimer
 st.write("---")
 st.write("")
-st.caption("**Disclaimer:** *All monetary estimates are based on a personal calculation. Please note that companies estimates might differ.*")
+st.write("")
 st.write("")
 st.write("")
 st.write("")
