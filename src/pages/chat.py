@@ -1,6 +1,6 @@
 from forms.contact import contact_form
 from utilities.gpt_communication import get_gpt4o_response
-from utilities.footer import footer
+import utilities.footer
 import streamlit as st
 
 MAX_MESSAGE_LENGTH = 200  
@@ -27,12 +27,7 @@ if prompt := st.chat_input(placeholder="What services does Damian provide?"):
         st.session_state.messages.append({"role": "assistant", "content": full_response})
 
 if len(st.session_state.messages) > 2:
-    # Call to Action - Hire me 
-    st.write("---")
-    st.subheader("🗓️ Book an Appointment")
-    st.write("Are you ready to start your transition into software engineering?")
-    if st.button("🗓️ BOOK AN APPOINTMENT", type="primary"):
-        st.switch_page("pages/services.py")
+    utilities.footer.call_to_action()
 
 
 

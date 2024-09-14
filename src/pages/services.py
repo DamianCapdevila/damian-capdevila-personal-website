@@ -1,11 +1,11 @@
 import streamlit as st
-from utilities.footer import footer
+import utilities.footer
 from forms.contact import contact_form
 
 # URLs, durations, and prices for booking services
 INITIAL_CONSULTATION_URL = "https://cal.com/damiancapdevila/initial-consultation"
 INITIAL_CONSULTATION_DURATION = "45"
-INITIAL_CONSULTATION_PRICE = "50"
+INITIAL_CONSULTATION_PRICE = "0"
 
 RESUME_REVIEW_URL = "https://cal.com/damiancapdevila/resume-review-writing"
 RESUME_REVIEW_DURATION = "45"
@@ -133,6 +133,9 @@ with col7:
   if st.button("✉️ Contact me!", type="primary", use_container_width=True):
     contact_form()
 
+st.write("")
+utilities.footer.call_to_action()
+
 st.write("---")
 st.write("")
 st.write("")
@@ -140,4 +143,4 @@ st.write("")
 st.write("")
 st.write("")
 
-footer()
+utilities.footer.footer()
