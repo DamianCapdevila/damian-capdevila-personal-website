@@ -1,6 +1,6 @@
 import streamlit as st
 from forms.contact import contact_form
-from utilities.footer import sidebar_footer
+from utilities.helper import sidebar_footer
 
 # Multiple pages setup:
 

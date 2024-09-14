@@ -1,5 +1,5 @@
 import streamlit as st
-import utilities.footer
+import utilities.helper
 from forms.contact import contact_form
 
 # URLs, durations, and prices for booking services
@@ -134,7 +134,7 @@ with col7:
     contact_form()
 
 st.write("")
-utilities.footer.call_to_action()
+utilities.helper.call_to_action()
 
 st.write("---")
 st.write("")
@@ -143,4 +143,4 @@ st.write("")
 st.write("")
 st.write("")
 
-utilities.footer.footer()
+utilities.helper.footer()

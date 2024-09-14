@@ -1,6 +1,6 @@
 from forms.contact import contact_form
 from utilities.gpt_communication import get_gpt4o_response
-import utilities.footer
+import utilities.helper
 import streamlit as st
 
 MAX_MESSAGE_LENGTH = 200  
@@ -27,7 +27,7 @@ if prompt := st.chat_input(placeholder="What services does Damian provide?"):
         st.session_state.messages.append({"role": "assistant", "content": full_response})
 
 if len(st.session_state.messages) > 2:
-    utilities.footer.call_to_action()
+    utilities.helper.call_to_action()
 
 
 

@@ -19,3 +19,6 @@ def call_to_action():
     st.write("*Start your transition into software engineering **for free!***")
     if st.button("📈 FREE Initial Consultation!", key="Footer call to action", type="primary", help="**Book a free initial consultation!**"):
         st.switch_page("pages/services.py")
+
+def faq():
+    st.caption("""<p>Questions? See <a href="services#FAQ" target="_self">FAQ Section</a></p>""", unsafe_allow_html=True)

@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 from forms.contact import contact_form
-import utilities.footer
+import utilities.helper
 
 HEADSHOT_URL = 'https://raw.githubusercontent.com/DamianCapdevila/damian-capdevila-personal-website-assets/main/Damian-sin%20fondo-gris.png'
 UVP_TEXT = f"**I help Engineers Unlock the Freedom, Flexibility, and Higher Income of a Software Career!** 💻🌎"
@@ -25,7 +25,7 @@ with col5:
 with col6:
     st.link_button("💡 See Actionable Advice", url=ACTIONABLE_STEPS_URL, type="secondary", help="**See 8 steps to begin your transition!**")
 
-st.caption("""<p>Questions? See <a href="services#FAQ" target="_self">FAQ Section</a></p>""", unsafe_allow_html=True)
+utilities.helper.faq()
 
 st.write("")
 st.subheader("About Me", divider=True)
@@ -58,7 +58,7 @@ with st.expander("**Education**", icon="👨‍🎓"):
     st.write("""
     **Master of Engineering (Electronics) - National University of La Plata**  
     *La Plata, Argentina (03/2012 - 10/2017)*  
-    - *[Thesis in Brain-Computer Interfaces](https://drive.google.com/file/d/1y4BDSVnrj8vulKdOlVp3ZUHFDBYpUJ_v/view?usp=drive_link) based on Stationary-state visually-evoked potentials.*
+    - *[Thesis in Brain-Computer Interfaces 🧠](https://drive.google.com/file/d/1y4BDSVnrj8vulKdOlVp3ZUHFDBYpUJ_v/view?usp=drive_link) based on Stationary-state visually-evoked potentials.*
     """)
 
     st.subheader("Relevant Courses", divider=True)
@@ -72,16 +72,17 @@ with st.expander("**Education**", icon="👨‍🎓"):
 with st.expander(label="**Skills**", icon="🛠"):
     st.write("")
     st.write("""
-    - **Presales:** *Technical Consultancy, Conference Speaking, Professional English, Native Spanish*  
-    - **Programming:** *C#, .NET, REST API, WPF, Blazor, MVVM, Unity Container, Nunit, Python, Streamlit*  
-    - **Industrial Automation:** *PLC, HMI, Drives, Commissioning, TIA Portal, RS Logix*  
-    - **Tools:** *Docker, Git, Postman, Azure, Visual Studio, VSCode, Azure DevOps Platform*   
-    - **Methodologies:** *Agile Software Development, Refactoring Legacy Systems, Code Reviewing* 
+    - 📣 **Presales:** *Technical Consultancy, Conference Speaking, Professional English, Native Spanish*  
+    - 💻 **Programming:** *C#, .NET, REST API, WPF, Blazor, MVVM, Nunit, Python, Streamlit*  
+    - 👷🏻‍♂️ **Industrial Automation:** *PLC, HMI, Drives, Commissioning, TIA Portal, RS Logix*  
+    - 🔧 **Tools:** *Docker, Git, Postman, Azure, Visual Studio, VSCode, Azure DevOps Platform*   
+    - 🥋 **Methodologies:** *Agile Software Development, Refactoring Legacy Systems, Code Reviewing* 
     """)
     st.write("")
 
 st.write("")
-utilities.footer.call_to_action()
+utilities.helper.call_to_action()
+utilities.helper.faq()
 
 #Disclaimer
 st.write("---")
@@ -91,4 +92,4 @@ st.write("")
 st.write("")
 st.write("")
 
-utilities.footer.footer()
+utilities.helper.footer()
