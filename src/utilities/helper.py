@@ -22,3 +22,13 @@ def call_to_action():
 
 def faq():
     st.caption("""<p>Questions? See <a href="services#FAQ" target="_self">FAQ Section</a></p>""", unsafe_allow_html=True)
+
+def add_vertical_space(num_lines: int = 1):
+    """
+    Adds vertical space using Streamlit's write function.
+    
+    Args:
+    num_lines (int): Number of lines of vertical space to add. Defaults to 1.
+    """
+    for _ in range(num_lines):
+        st.write("")
