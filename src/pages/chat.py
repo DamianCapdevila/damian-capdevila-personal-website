@@ -1,4 +1,3 @@
-from forms.contact import contact_form
 from utilities.gpt_communication import get_gpt4o_response
 import utilities.helper
 import streamlit as st
