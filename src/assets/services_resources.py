@@ -7,6 +7,8 @@ INITIAL_CONSULTATION_TEXT = """
 - Assess your strengths and areas to focus on for your transition to software engineering.
 - Define a roadmap for your transition.
 """
+INITIAL_CONSULTATION_SUBHEADER = "**Initial Consultation**"
+BOOK_INITIAL_CONSULTATION_TEXT = "BOOK INITIAL CONSULTATION"
 
 RESUME_REVIEW_URL = "https://cal.com/damiancapdevila/resume-review-writing"
 RESUME_REVIEW_DURATION = "45"
@@ -17,6 +19,8 @@ RESUME_REVIEW_TEXT = """
 - Help craft a new resume that emphasizes your transferable skills and experience.
 - Make your CV ATS-proof.
 """
+RESUME_REVIEW_SUBHEADER = "**Resume Review/Writing**"
+BOOK_RESUME_REVIEW_TEXT = "BOOK RESUME REVIEW"
 
 REGULAR_CONSULTATION_URL = "https://cal.com/damiancapdevila/regular-consultation"
 REGULAR_CONSULTATION_DURATION = "60"
@@ -27,6 +31,8 @@ REGULAR_CONSULTATION_TEXT = """
 - Assess your current transition status.
 - Assist with coding challenges, interview preparation, and career development planning.
 """
+REGULAR_CONSULTATION_SUBHEADER = "**Regular Consultation**"
+BOOK_REGULAR_CONSULTATION_TEXT = "BOOK REGULAR CONSULTATION"
 
 LINKEDIN_REVIEW_URL = "https://cal.com/damiancapdevila/linkedin-profile-review"
 LINKEDIN_REVIEW_DURATION = "30"
@@ -37,52 +43,36 @@ LINKEDIN_REVIEW_TEXT = """
 - Enhance the profile to make opportunities come to you.
 - Help you build a personal brand.
 """
+LINKEDIN_REVIEW_SUBHEADER = "**LinkedIn Profile Review**"
+BOOK_LINKEDIN_REVIEW_TEXT = "BOOK LINKEDIN REVIEW"
 
 CONTAINER_HEIGHT = 438
-
-# Other texts
 SERVICES_SUBHEADER = "💻 Services"
 SERVICES_INTRO_TEXT = "*To speed up your transition to software engineering, book consultation sessions that adapt to your schedule!*"
 SERVICES_FAQ_TEXT = """<p>Questions? See <a href="#FAQ">FAQ Section</a></p>"""
+DURATION_TEXT = "⏳ Duration: {} minutes"
+PRICE_TEXT = "💶 Price: {} Euros"
 
-# Button texts
-BOOK_INITIAL_CONSULTATION_TEXT = "BOOK INITIAL CONSULTATION"
-BOOK_RESUME_REVIEW_TEXT = "BOOK RESUME REVIEW"
-BOOK_REGULAR_CONSULTATION_TEXT = "BOOK REGULAR CONSULTATION"
-BOOK_LINKEDIN_REVIEW_TEXT = "BOOK LINKEDIN REVIEW"
-
-# Subheader texts
-INITIAL_CONSULTATION_SUBHEADER = "**Initial Consultation**"
-RESUME_REVIEW_SUBHEADER = "**Resume Review/Writing**"
-REGULAR_CONSULTATION_SUBHEADER = "**Regular Consultation**"
-LINKEDIN_REVIEW_SUBHEADER = "**LinkedIn Profile Review**"
-
-# FAQ texts
 FAQ_1_QUESTION = "**How do I know if these services are right for me?**"
 FAQ_1_ANSWER = """
 *If you're an engineer from a different field, such as automation, and you're considering a transition to software engineering, my services are designed for you. During the initial consultation, we discuss your background and career goals to ensure that the services align with your needs. My goal is to help you make a smooth transition into the software engineering field.*
 """
-
 FAQ_2_QUESTION = "**How many consultations does it typically take?**"
 FAQ_2_ANSWER = """
 *The number of consultations depends on your individual needs and how quickly you progress. Some clients might require just one or two sessions for specific guidance, while others may benefit from ongoing support over several months. We can discuss a customized plan during the initial consultation.*
 """
-
 FAQ_3_QUESTION = "**How long does it usually take to transition into software engineering?**"
 FAQ_3_ANSWER = """
 *The time it takes to transition into software engineering varies depending on your current skills, the time you can dedicate to learning, and the specific area of software engineering you're targeting. On average, it could take anywhere from a few months to a year with consistent effort and the right guidance.*
 """
-
 FAQ_4_QUESTION = "**What programming language should I start with?**"
 FAQ_4_ANSWER = """
 *The best programming language to start with depends on your career goals. If you're interested in web development, Python and JavaScript are popular choices. For systems programming, C++ might be more suitable. During our consultations, I can help you choose the right language based on your background and objectives.*
 """
-
 FAQ_5_QUESTION = "**What payment methods do you accept?**"
 FAQ_5_ANSWER = """
 *I accept various payment methods, including credit/debit cards, PayPal, and bank transfers. If you have any specific requirements or preferences, feel free to discuss them during our consultation.*
 """
-
 FAQ_6_QUESTION = "**What is the difference between an initial and a regular consultation?**"
 FAQ_6_ANSWER = """
 *The initial consultation is designed to understand your background, career goals, and create a tailored roadmap for your transition into software engineering. The regular consultations are follow-up sessions where we assess your progress, tackle any challenges you're facing, and continue to refine your transition plan.*

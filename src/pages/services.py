@@ -13,8 +13,8 @@ col3, col4 = st.columns(2, gap='small')
 with col1:
     with st.container(height=CONTAINER_HEIGHT, border=True):
         st.subheader(INITIAL_CONSULTATION_SUBHEADER, anchor=False)
-        st.write(f"⏳ Duration: {INITIAL_CONSULTATION_DURATION} minutes")
-        st.write(f"💶 Price: {INITIAL_CONSULTATION_PRICE} Euros")
+        st.write(DURATION_TEXT.format(INITIAL_CONSULTATION_DURATION))
+        st.write(PRICE_TEXT.format(INITIAL_CONSULTATION_PRICE))
         st.write(INITIAL_CONSULTATION_TEXT)
         st.link_button(BOOK_INITIAL_CONSULTATION_TEXT, type="primary", use_container_width=True, url=INITIAL_CONSULTATION_URL)
 
@@ -22,8 +22,8 @@ with col1:
 with col3:
     with st.container(height=CONTAINER_HEIGHT, border=True):
         st.subheader(RESUME_REVIEW_SUBHEADER, anchor=False)
-        st.write(f"⏳ Duration: {RESUME_REVIEW_DURATION} minutes")
-        st.write(f"💶 Price: {RESUME_REVIEW_PRICE} Euros")
+        st.write(DURATION_TEXT.format(RESUME_REVIEW_DURATION))
+        st.write(PRICE_TEXT.format(RESUME_REVIEW_PRICE))
         st.write(RESUME_REVIEW_TEXT)
         st.link_button(BOOK_RESUME_REVIEW_TEXT, type="primary", use_container_width=True, url=RESUME_REVIEW_URL)
 
@@ -31,8 +31,8 @@ with col3:
 with col2:
     with st.container(height=CONTAINER_HEIGHT, border=True):
         st.subheader(REGULAR_CONSULTATION_SUBHEADER, anchor=False)
-        st.write(f"⏳ Duration: {REGULAR_CONSULTATION_DURATION} minutes")
-        st.write(f"💶 Price: {REGULAR_CONSULTATION_PRICE} Euros")
+        st.write(DURATION_TEXT.format(REGULAR_CONSULTATION_DURATION))
+        st.write(PRICE_TEXT.format(REGULAR_CONSULTATION_PRICE))
         st.write(REGULAR_CONSULTATION_TEXT)
         st.link_button(BOOK_REGULAR_CONSULTATION_TEXT, type="primary", use_container_width=True, url=REGULAR_CONSULTATION_URL)
 
@@ -40,8 +40,8 @@ with col2:
 with col4:
     with st.container(height=CONTAINER_HEIGHT, border=True):
         st.subheader(LINKEDIN_REVIEW_SUBHEADER, anchor=False)
-        st.write(f"⏳ Duration: {LINKEDIN_REVIEW_DURATION} minutes")
-        st.write(f"💶 Price: {LINKEDIN_REVIEW_PRICE} Euros")
+        st.write(DURATION_TEXT.format(LINKEDIN_REVIEW_DURATION))
+        st.write(PRICE_TEXT.format(LINKEDIN_REVIEW_PRICE))
         st.write(LINKEDIN_REVIEW_TEXT)
         st.link_button(BOOK_LINKEDIN_REVIEW_TEXT, type="primary", use_container_width=True, url=LINKEDIN_REVIEW_URL)
 
