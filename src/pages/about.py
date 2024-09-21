@@ -5,7 +5,7 @@ from assets.about_resources import *
 col1, col2 = st.columns(2, gap='small', vertical_alignment="top")
 
 with col1:
-    st.image(HEADSHOT_URL, output_format="PNG", width=)
+    st.image(HEADSHOT_URL, output_format="PNG", width=HEADSHOT_WIDTH)
 with col2:
     st.title("Damián Capdevila", anchor=False)
     st.write(UVP_MAIN_TEXT)
