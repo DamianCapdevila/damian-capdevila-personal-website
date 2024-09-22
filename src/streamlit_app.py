@@ -31,7 +31,7 @@ chat_page = st.Page(
 )
 
 # Construct the absolute path to the image
-image_path = get_absolute_path("assets/background-removed.png")
+image_path = get_absolute_path("assets/images/background-removed.png")
 
 # Verify if the image exists before setting the logo
 if os.path.exists(image_path):
