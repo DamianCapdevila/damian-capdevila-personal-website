@@ -1,6 +1,6 @@
 import streamlit as st
 import utilities.helper
-from assets.about_resources import *
+from assets.string_constants.about_resources import *
 from app_pages.routes import *
 
 # Headshot, UVP and Name

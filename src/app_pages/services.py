@@ -1,7 +1,7 @@
 import streamlit as st
 import utilities.helper
 from forms.contact import contact_form
-from assets.services_resources import *
+from assets.string_constants.services_resources import *
 from app_pages.routes import *
 
 st.subheader(SERVICES_SUBHEADER, divider=True)

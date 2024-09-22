@@ -1,7 +1,7 @@
 import streamlit as st
 import requests 
 import re
-from assets.contact_resources import *
+from assets.string_constants.contact_resources import *
 
 def is_valid_email(email):
     return re.match(r"[^@]+@[^@]+\.[^@]+", email)
