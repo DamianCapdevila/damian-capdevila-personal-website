@@ -2,6 +2,7 @@ from utilities.gpt_communication import get_gpt4o_response
 import utilities.helper
 import streamlit as st
 from assets.chat_resources import *
+from app_pages.routes import *
 
 st.title(CHAT_TITLE)
 st.caption(CHAT_CAPTION)

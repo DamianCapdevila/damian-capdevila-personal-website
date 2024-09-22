@@ -1,4 +1,5 @@
 import streamlit as st
+from app_pages.routes import SERVICES_PAGE_ROUTE
 
 FOOTER_TEXT = """
         <div style="text-align: center;">
@@ -18,7 +19,7 @@ def call_to_action():
     st.subheader("🗓️ Book an Appointment", divider=True)
     st.write("*Start your transition into software engineering **for free!***")
     if st.button("📈 FREE Initial Consultation!", key="Footer call to action", type="primary", help="**Book a free initial consultation!**"):
-        st.switch_page("pages/services.py")
+        st.switch_page(SERVICES_PAGE_ROUTE)
 
 def faq():
     st.caption("""<p>Questions? See <a href="services#FAQ" target="_self">FAQ Section</a></p>""", unsafe_allow_html=True)

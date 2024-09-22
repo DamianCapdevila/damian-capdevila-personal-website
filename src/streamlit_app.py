@@ -1,7 +1,10 @@
 import streamlit as st
 from forms.contact import contact_form
 from utilities.helper import sidebar_footer
+from app_pages.routes import *
 import os
+
+
 
 # Function to get absolute path
 def get_absolute_path(relative_path):
@@ -9,20 +12,20 @@ def get_absolute_path(relative_path):
 
 # Multiple pages setup:
 about_page = st.Page(
-    page = "pages/about.py",
+    page = ABOUT_PAGE_ROUTE,
     title = "About Me",
     icon = "📄",
     default = True,
 )
 
 services_page = st.Page(
-    page = "pages/services.py",
+    page = SERVICES_PAGE_ROUTE,
     title = "Services",
     icon = "💻",
 )
 
 chat_page = st.Page(
-    page = "pages/chat.py",
+    page = CHAT_PAGE_ROUTE,
     title = "Ask my assistant!",
     icon = "🤖",
 )

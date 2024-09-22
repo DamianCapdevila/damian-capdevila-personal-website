@@ -2,6 +2,7 @@ import streamlit as st
 import utilities.helper
 from forms.contact import contact_form
 from assets.services_resources import *
+from app_pages.routes import *
 
 st.subheader(SERVICES_SUBHEADER, divider=True)
 st.write(SERVICES_INTRO_TEXT)
@@ -77,7 +78,7 @@ col5, col6, col7, col8 = st.columns([1, 4, 4, 1], gap="medium")
 
 with col6:
     if st.button(ASK_ASSISTANT_BUTTON_TEXT, type="secondary", use_container_width=True):
-        st.switch_page("pages/chat.py")
+        st.switch_page(CHAT_PAGE_ROUTE)
 
 with col7:
     if st.button(CONTACT_ME_BUTTON_TEXT, type="primary", use_container_width=True):

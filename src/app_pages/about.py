@@ -1,6 +1,7 @@
 import streamlit as st
 import utilities.helper
 from assets.about_resources import *
+from app_pages.routes import *
 
 # Headshot, UVP and Name
 col1, col2 = st.columns(2, gap='small', vertical_alignment="top")
@@ -19,7 +20,7 @@ st.write(SERVICES_QUESTION)
 col5, col6, col7 = st.columns(3, gap='small', vertical_alignment="center")
 with col5:
     if st.button(CONSULTATION_BUTTON_TEXT, type="primary", help=CONSULTATION_BUTTON_HELP):
-        st.switch_page("pages/services.py")
+        st.switch_page(SERVICES_PAGE_ROUTE)
 with col6:
     st.link_button(ACTIONABLE_ADVICE_BUTTON_TEXT, url=ACTIONABLE_STEPS_URL, type="secondary", help=ACTIONABLE_ADVICE_BUTTON_HELP)
 
