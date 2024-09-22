@@ -1,7 +1,17 @@
 import streamlit as st
 from utilities.helper import sidebar_footer
 from app_pages.routes import *
+from assets.string_constants.about_resources import HEADSHOT_URL
 import os
+
+# Site logo setup:
+def get_absolute_path(relative_path):
+    return os.path.abspath(os.path.join(os.path.dirname(__file__), relative_path))
+
+# Construct the absolute path to the site logo
+logo_image_path = get_absolute_path("assets/images/background-removed.png")
+
+st.set_page_config(page_title="Damián Capdevila - Software Engineer", page_icon=HEADSHOT_URL)
 
 # Multiple pages setup:
 about_page = st.Page(
@@ -23,20 +33,11 @@ chat_page = st.Page(
     icon = "🤖",
 )
 
-# Site logo setup:
-
-# Function to get absolute path
-def get_absolute_path(relative_path):
-    return os.path.abspath(os.path.join(os.path.dirname(__file__), relative_path))
-
-# Construct the absolute path to the site logo
-image_path = get_absolute_path("assets/images/background-removed.png")
-
 # Verify if the image exists before setting the site logo
-if os.path.exists(image_path):
-    st.logo(image_path)
+if os.path.exists(logo_image_path):
+    st.logo(logo_image_path)
 else:
-    st.error(f"Logo image not found at {image_path}")
+    st.error(f"Logo image not found at {logo_image_path}")
 
 # Navigation setup:
 pg = st.navigation(

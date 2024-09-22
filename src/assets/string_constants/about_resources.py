@@ -1,6 +1,7 @@
 # Headshot, UVP and Name
-HEADSHOT_URL = 'https://raw.githubusercontent.com/DamianCapdevila/damian-capdevila-personal-website-assets/main/Damian-sin%20fondo-gris.png'
+HEADSHOT_URL = 'https://raw.githubusercontent.com/DamianCapdevila/damian-capdevila-personal-website-assets/main/Damian-sin%20fondo-gris.webp'
 HEADSHOT_WIDTH = 300
+HEADSHOT_CAPTION = "Damian Capdevila Headshot"
 TITLE_TEXT = "Damián Capdevila"
 UVP_MAIN_TEXT = "**I help Engineers Unlock the Freedom, Flexibility, and High Income of a Software Career!** 💻🌎"
 UVP_EXPLANATION_TEXT = "**Thrive in the digital age** by **transforming your engineering experience** into a Software Engineering Powerhouse, **without the fear or uncertainty.**"

@@ -7,7 +7,7 @@ from app_pages.routes import *
 col1, col2 = st.columns(2, gap='small', vertical_alignment="top")
 
 with col1:
-    st.image(HEADSHOT_URL, output_format="PNG", width=HEADSHOT_WIDTH)
+    st.image(HEADSHOT_URL, width=HEADSHOT_WIDTH)
 with col2:
     st.title(TITLE_TEXT, anchor=False)
     st.write(UVP_MAIN_TEXT)
