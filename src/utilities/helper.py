@@ -1,5 +1,6 @@
 import streamlit as st
 from app_pages.routes import SERVICES_PAGE_ROUTE
+import os
 
 FOOTER_TEXT = """
         <div style="text-align: center;">

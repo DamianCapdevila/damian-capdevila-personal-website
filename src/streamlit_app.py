@@ -1,14 +1,7 @@
 import streamlit as st
-from forms.contact import contact_form
 from utilities.helper import sidebar_footer
 from app_pages.routes import *
 import os
-
-
-
-# Function to get absolute path
-def get_absolute_path(relative_path):
-    return os.path.abspath(os.path.join(os.path.dirname(__file__), relative_path))
 
 # Multiple pages setup:
 about_page = st.Page(
@@ -30,10 +23,16 @@ chat_page = st.Page(
     icon = "🤖",
 )
 
-# Construct the absolute path to the image
+# Site logo setup:
+
+# Function to get absolute path
+def get_absolute_path(relative_path):
+    return os.path.abspath(os.path.join(os.path.dirname(__file__), relative_path))
+
+# Construct the absolute path to the site logo
 image_path = get_absolute_path("assets/images/background-removed.png")
 
-# Verify if the image exists before setting the logo
+# Verify if the image exists before setting the site logo
 if os.path.exists(image_path):
     st.logo(image_path)
 else:
@@ -47,6 +46,7 @@ pg = st.navigation(
     }
 )
 
+# Footer setup:
 sidebar_footer()
 
 # Run the navigation:
