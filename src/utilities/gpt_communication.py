@@ -2,19 +2,37 @@ import openai
 import os
 import copy
 from utilities import file_handler
+import logging
+import threading
 
 OPENAI_API_KEY = os.getenv('ApiKey')
 openai.api_key = OPENAI_API_KEY
 openai.version = 'gpt-4o-2024-08-06'  
 
-cv_content = file_handler.load_cvs_from_folder(file_handler.assets_folder_path)
-SYSTEM_MESSAGE = f"""
+cv_content = "CV content is being loaded..."
+cv_loading_complete = threading.Event()
+
+def load_cvs_background():
+    global cv_content
+    try:
+        cv_content = file_handler.load_cvs_from_secure_location()
+        if not cv_content:
+            cv_content = "CV content unavailable."
+    except Exception as e:
+        logging.error(f"Error loading CVs: {str(e)}")
+        cv_content = "Error loading CV content."
+    finally:
+        cv_loading_complete.set()
+
+# Start loading CVs in the background
+threading.Thread(target=load_cvs_background, daemon=True).start()
+
+SYSTEM_MESSAGE = """
         You are an AI chatbot that provides responses based on the following CVs:
-        {cv_content}
+        {{cv_content}}
 
         If the user requests contact information, answer based on the following information:
         Linkedin: https://linkedin.com/in/damiancapdevila
-        Phone number: +34 673 47 82 70
         Email address: damian.capdevila@hotmail.com
         Blog: https://substack.com/home/post/p-144238956?r=3cvmsg&utm_campaign=post&utm_medium=web
         GitHub: https://github.com/damiancapdevila
@@ -27,10 +45,14 @@ SYSTEM_MESSAGE = f"""
         Point the user to Damian's contact information.
         """
 
-# Function to get a response from GPT-4o based on Damian CVs. We consider the last 10 messages for context.
 def get_gpt4o_response(messages):
     try:
-        predefinedSystemMessage = {"role": "system", "content": SYSTEM_MESSAGE}
+        global cv_content
+        if not cv_loading_complete.is_set():
+            cv_loading_complete.wait(timeout=10)  # Wait for up to 5 seconds for CV loading
+        
+        system_message_with_cv = SYSTEM_MESSAGE.replace("{{cv_content}}", cv_content)
+        predefinedSystemMessage = {"role": "system", "content": system_message_with_cv}
         modifiedMessages = copy.deepcopy(messages)
         modifiedMessages.insert(len(messages) - 1, predefinedSystemMessage)
         response = openai.chat.completions.create(
