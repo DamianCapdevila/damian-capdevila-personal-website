@@ -2,9 +2,12 @@
 
 This repository contains the source code for Damián Capdevila's personal website, built using Streamlit. The website showcases Damián's professional profile, services, and expertise in helping engineers transition into software careers.
 
+![A screenshot of Damian Capdevila's personal website](src/assets/images/site-screenshot.png)
+
 ## About Damián Capdevila
 
 Damián Capdevila is a Software Engineer with a background in Automation Engineering. He specializes in helping engineers unlock the freedom, flexibility, and high income potential of a software career. With seven years of experience spanning Software Engineering, Automation Engineering, Solutions Engineering, Pre-sales, and Academic Research, Damián offers valuable insights for those looking to transition into software development.
+![A Photo ofDamian Capdevila](https://raw.githubusercontent.com/DamianCapdevila/damian-capdevila-personal-website-assets/main/Damian-sin%20fondo-gris.webp)
 
 ## Website Features
 
@@ -37,6 +40,7 @@ To run this website locally:
    pip install -r requirements.txt
    ```
 3. Set up environment variables for OpenAI API and Cal.com integration
+
 4. Run the Streamlit app:
    ```
    streamlit run src/streamlit_app.py
@@ -58,26 +62,6 @@ damian-capdevila-personal-website/
 │   │   └── helper.py
 │   └── streamlit_app.py
 └── README.md
-```
-
-## Key Components
-
-### Main Application
-```python:damian-capdevila-personal-website/src/streamlit_app.py
-startLine: 14
-endLine: 48
-```
-
-### About Page
-```python:damian-capdevila-personal-website/src/app_pages/about.py
-startLine: 6
-endLine: 60
-```
-
-### Services Page
-```python:damian-capdevila-personal-website/src/app_pages/services.py
-startLine: 7
-endLine: 96
 ```
 
 ## Contributing
