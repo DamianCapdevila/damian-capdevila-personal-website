@@ -13,9 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code into the container
 COPY . .
-#Workaround to add metatags to the streamlit app
-COPY index.html /usr/local/lib/python3.9/site-packages/streamlit/static/index.html
-
 
 # Expose the port Streamlit runs on
 EXPOSE 8501
