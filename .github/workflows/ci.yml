@@ -1,12 +1,13 @@
-name: Streamlit CI
+name: Streamlit CI/CD
 
 on:
     push:
         branches:
             - dev
+            - main
 
 jobs:
-    setup-and-test:
+    build-and-test:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
@@ -32,5 +33,85 @@ jobs:
               run: |
                 cd src
                 timeout 10s streamlit run ./streamlit_app.py --server.headless true || echo "Streamlit app exited with code $?"
+
+
+
+    deploy-staging:
+        needs: build-and-test
+        if: github.ref == 'refs/heads/dev'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Login to Azure
+              uses: azure/login@v1
+              with:
+                  creds: ${{ secrets.AZURE_CREDENTIALS_STAGING }}
+
+            - name: Build and push image to ACR
+              uses: azure/docker-login@v1
+              with:
+                  login-server: ${{ secrets.ACR_LOGIN_SERVER_STAGING }}
+                  username: ${{ secrets.ACR_USERNAME_STAGING }}
+                  password: ${{ secrets.ACR_PASSWORD_STAGING }}
+            - run: |
+                docker build -t ${{ secrets.ACR_LOGIN_SERVER_STAGING }}/streamlit-app:${{ github.sha }} .
+                docker push ${{ secrets.ACR_LOGIN_SERVER_STAGING }}/streamlit-app:${{ github.sha }}
+
+            - name: Deploy to Azure Container Instance
+              uses: azure/aci-deploy@v1
+              with:
+                  resource-group: staging-damian-capdevila-personal-website
+                  dns-name-label: staging-damian-capdevila
+                  image: ${{ secrets.ACR_LOGIN_SERVER_STAGING }}/streamlit-app:${{ github.sha }}
+                  registry-login-server: ${{ secrets.ACR_LOGIN_SERVER_STAGING }}
+                  registry-username: ${{ secrets.ACR_USERNAME_STAGING }}
+                  registry-password: ${{ secrets.ACR_PASSWORD_STAGING }}
+                  name: streamlit-app-staging
+                  location: 'westeurope'
+                  cpu: 1
+                  memory: 1
+                  ports: 8501
+
+
+
+    deploy-production:
+        needs: build-and-test
+        if: github.ref == 'refs/heads/main'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Login to Azure
+              uses: azure/login@v1
+              with:
+                  creds: ${{ secrets.AZURE_CREDENTIALS_PRODUCTION }}
+
+            - name: Build and push image to ACR
+              uses: azure/docker-login@v1
+              with:
+                  login-server: ${{ secrets.ACR_LOGIN_SERVER_PRODUCTION }}
+                  username: ${{ secrets.ACR_USERNAME_PRODUCTION }}
+                  password: ${{ secrets.ACR_PASSWORD_PRODUCTION }}
+            - run: |
+                docker build -t ${{ secrets.ACR_LOGIN_SERVER_PRODUCTION }}/streamlit-app:${{ github.sha }} .
+                docker push ${{ secrets.ACR_LOGIN_SERVER_PRODUCTION }}/streamlit-app:${{ github.sha }}
+
+            - name: Deploy to Azure Container Instance
+              uses: azure/aci-deploy@v1
+              with:
+                  resource-group: production-damian-capdevila-personal-website
+                  dns-name-label: production-damian-capdevila
+                  image: ${{ secrets.ACR_LOGIN_SERVER_PRODUCTION }}/streamlit-app:${{ github.sha }}
+                  registry-login-server: ${{ secrets.ACR_LOGIN_SERVER_PRODUCTION }}
+                  registry-username: ${{ secrets.ACR_USERNAME_PRODUCTION }}
+                  registry-password: ${{ secrets.ACR_PASSWORD_PRODUCTION }}
+                  name: streamlit-app-production
+                  location: 'westeurope'
+                  cpu: 1
+                  memory: 1
+                  ports: 8501
 
 
