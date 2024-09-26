@@ -73,8 +73,10 @@ jobs:
                   cpu: 1
                   memory: 1
                   ports: 8501
-
-
+                  environment-variables: |
+                    OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+                    CV_PRESALES_URL=${{ secrets.CV_PRESALES_URL }}
+                    CV_SOFTWARE_URL=${{ secrets.CV_SOFTWARE_URL }}
 
     deploy-production:
         needs: build-and-test
