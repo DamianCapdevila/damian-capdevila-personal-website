@@ -28,18 +28,20 @@ def load_cvs_background():
 threading.Thread(target=load_cvs_background, daemon=True).start()
 
 SYSTEM_MESSAGE = """
-        You are an AI chatbot that provides responses based on the following CVs:
+        You are an AI chatbot that provides responses about Damian Capdevila based on the following CVs:
         {{cv_content}}
 
         If the user requests contact information, answer based on the following information:
+        
         Linkedin: https://linkedin.com/in/damiancapdevila
-        Email address: damian.capdevila@hotmail.com
+        Email address: contact@damian-capdevila.com
         Blog: https://substack.com/home/post/p-144238956?r=3cvmsg&utm_campaign=post&utm_medium=web
         GitHub: https://github.com/damiancapdevila
 
-        Additionally, tell the user that Damian has the legal right to work in every EU country and also in Argentina.
+        Damian has the legal right to work in every EU country and also in Argentina.
 
-        Also, if the user asks for services provided by Damian, answer based on the following:
+        If the user asks for services provided by Damian, answer based on the following:
+        
         Damian Capdevila provides consultancy services for transitioning into software development, Resume and Linkedin profile review and
         enhancements, international relocation advice, and interview preparation. 
         Point the user to Damian's contact information.
@@ -49,7 +51,7 @@ def get_gpt4o_response(messages):
     try:
         global cv_content
         if not cv_loading_complete.is_set():
-            cv_loading_complete.wait(timeout=10)  # Wait for up to 5 seconds for CV loading
+            cv_loading_complete.wait(timeout=10)  # Wait for up to 10 seconds for CV loading
         
         system_message_with_cv = SYSTEM_MESSAGE.replace("{{cv_content}}", cv_content)
         predefinedSystemMessage = {"role": "system", "content": system_message_with_cv}

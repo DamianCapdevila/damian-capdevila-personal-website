@@ -4,7 +4,7 @@ import requests
 from io import BytesIO
 import logging
 
-# Load CV content from multiple PDF files in the "assets" folder
+# Load CV content from multiple PDF files in Google Drive
 def load_cvs_from_secure_location():
     combined_text = ""
     cv_urls = [
@@ -30,4 +30,3 @@ def load_cv_from_url(url):
             text += page.extract_text() + "\n"
     return text
 
-# Remove the assets_folder_path variable as it's no longer needed

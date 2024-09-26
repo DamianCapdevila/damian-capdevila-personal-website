@@ -46,30 +46,20 @@ with col4:
         st.write(LINKEDIN_REVIEW_TEXT)
         st.link_button(BOOK_LINKEDIN_REVIEW_TEXT, type="primary", use_container_width=True, url=LINKEDIN_REVIEW_URL)
 
-st.subheader("FAQ", anchor="FAQ", divider=True)
-# FAQ 1
-with st.expander(FAQ_1_QUESTION):
-    st.write(FAQ_1_ANSWER)
+st.subheader("Frequently Asked Questions", anchor="FAQ", divider=True)
 
-# FAQ 2
-with st.expander(FAQ_2_QUESTION):
-    st.write(FAQ_2_ANSWER)
+faq_items = [
+    ("🤔 " + FAQ_1_QUESTION, FAQ_1_ANSWER),
+    ("🔢 " + FAQ_2_QUESTION, FAQ_2_ANSWER),
+    ("⏳ " + FAQ_3_QUESTION, FAQ_3_ANSWER),
+    ("💻 " + FAQ_4_QUESTION, FAQ_4_ANSWER),
+    ("💳 " + FAQ_5_QUESTION, FAQ_5_ANSWER),
+    ("🆚 " + FAQ_6_QUESTION, FAQ_6_ANSWER)
+]
 
-# FAQ 3
-with st.expander(FAQ_3_QUESTION):
-    st.write(FAQ_3_ANSWER)
-
-# FAQ 4
-with st.expander(FAQ_4_QUESTION):
-    st.write(FAQ_4_ANSWER)
-
-# FAQ 5
-with st.expander(FAQ_5_QUESTION):
-    st.write(FAQ_5_ANSWER)
-
-# FAQ 6
-with st.expander(FAQ_6_QUESTION):
-    st.write(FAQ_6_ANSWER)
+for question, answer in faq_items:
+    with st.expander(question):
+        st.markdown(answer)
 
 st.subheader(FURTHER_ASSISTANCE_SUBHEADER, divider=True)
 st.write(FURTHER_ASSISTANCE_TEXT)
@@ -84,13 +74,10 @@ with col7:
     if st.button(CONTACT_ME_BUTTON_TEXT, type="primary", use_container_width=True):
         contact_form()
 
-st.write("")
+utilities.helper.add_vertical_space(1)
 utilities.helper.call_to_action()
 
 st.write("---")
-st.write("")
-st.write("")
-st.write("")
-st.write("")
+utilities.helper.add_vertical_space(3)
 
 utilities.helper.footer()

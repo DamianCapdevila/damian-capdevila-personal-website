@@ -13,7 +13,7 @@ CONSULTATION_BUTTON_TEXT = "📈 FREE Initial Consultation!"
 CONSULTATION_BUTTON_HELP = "**Book a free initial consultation!**"
 ACTIONABLE_ADVICE_BUTTON_TEXT = "💡 See Actionable Advice"
 ACTIONABLE_ADVICE_BUTTON_HELP = "**See 8 steps to begin your transition!**"
-ACTIONABLE_STEPS_URL = 'https://damiancapdevila.substack.com/i/144652439/actionable-steps-if-you-want-to-make-the-transition'
+ACTIONABLE_STEPS_URL = 'https://damiancapdevila.substack.com/p/dont-start-from-scratch-launch-your'
 
 # About Me
 ABOUT_ME_SUBHEADER = "About Me"
