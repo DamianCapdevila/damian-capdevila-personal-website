@@ -3,3 +3,4 @@ openai
 pdfplumber
 pytest
 requests
+bs4

@@ -11,6 +11,12 @@ COPY requirements.txt .
 # Install the dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy the add_meta_tags.py script
+COPY add_meta_tags.py .
+
+# Run the script to add meta tags
+RUN python add_meta_tags.py
+
 # Copy the rest of the application code into the container
 COPY . .
 
@@ -19,3 +25,7 @@ EXPOSE 8501
 
 # Run the application
 CMD ["streamlit", "run", "src/streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+
+
+
+
