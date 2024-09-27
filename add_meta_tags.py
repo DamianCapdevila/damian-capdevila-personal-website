@@ -17,12 +17,31 @@ soup = BeautifulSoup(html_content, 'html.parser')
 
 # Create new meta tags
 meta_tags = [
+    # General SEO
     {'name': 'description', 'content': 'Damián Capdevila helps engineers unlock the freedom, flexibility, and high income of a software career. Expert guidance for your transition into software engineering.'},
+    
+    # Open Graph / Facebook
+    {'property': 'og:type', 'content': 'website'},
+    {'property': 'og:url', 'content': 'https://damiancapdevila.com'},
     {'property': 'og:title', 'content': 'Damián Capdevila - Software Engineer'},
     {'property': 'og:description', 'content': 'Unlock your potential in software engineering with expert guidance from Damián Capdevila.'},
     {'property': 'og:image', 'content': 'https://raw.githubusercontent.com/DamianCapdevila/damian-capdevila-personal-website-assets/main/Damian-sin%20fondo-gris.webp'},
-    {'property': 'og:url', 'content': 'https://damiancapdevila.com'},
-    {'name': 'twitter:card', 'content': 'https://raw.githubusercontent.com/DamianCapdevila/damian-capdevila-personal-website-assets/main/Damian-sin%20fondo-gris.webp'}
+    
+    # Twitter
+    {'name': 'twitter:card', 'content': 'summary_large_image'},
+    {'name': 'twitter:url', 'content': 'https://damiancapdevila.com'},
+    {'name': 'twitter:title', 'content': 'Damián Capdevila - Software Engineer'},
+    {'name': 'twitter:description', 'content': 'Unlock your potential in software engineering with expert guidance from Damián Capdevila.'},
+    {'name': 'twitter:image', 'content': 'https://raw.githubusercontent.com/DamianCapdevila/damian-capdevila-personal-website-assets/main/Damian-sin%20fondo-gris.webp'},
+    
+    # LinkedIn
+    {'name': 'linkedin:title', 'content': 'Damián Capdevila - Software Engineer'},
+    {'name': 'linkedin:description', 'content': 'Unlock your potential in software engineering with expert guidance from Damián Capdevila.'},
+    {'name': 'linkedin:image', 'content': 'https://raw.githubusercontent.com/DamianCapdevila/damian-capdevila-personal-website-assets/main/Damian-sin%20fondo-gris.webp'},
+    
+    # Additional tags
+    {'name': 'author', 'content': 'Damián Capdevila'},
+    {'name': 'keywords', 'content': 'software engineering, career transition, engineering, consulting, mentorship'},
 ]
 
 # Add new meta tags to the head
