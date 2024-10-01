@@ -23,4 +23,6 @@ jobs:
       with:
         context: .
         push: true
-        tags: damiancapdevila/damian-capdevila-website:${{ github.sha }}
+        tags: |
+          damiancapdevila/damian-capdevila-website:${{ github.sha }}
+          damiancapdevila/damian-capdevila-website:latest
