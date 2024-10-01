@@ -29,5 +29,10 @@ ENV PATH="/root/.local/bin:${PATH}"
 # Install Streamlit
 RUN pip install --user streamlit
 
+# Set environment variables
+ENV OPENAI_API_KEY=${OPENAI_API_KEY}
+ENV CV_PRESALES_URL=${CV_PRESALES_URL}
+ENV CV_SOFTWARE_URL=${CV_SOFTWARE_URL}
+
 # Run the application
 CMD ["python", "-m", "streamlit", "run", "src/streamlit_app.py", "--server.port=8000", "--server.address=0.0.0.0"]
