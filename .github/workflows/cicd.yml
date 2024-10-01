@@ -1,0 +1,77 @@
+name: Streamlit CI/CD
+
+on:
+    push:
+        branches:
+            - dev
+            - main
+
+jobs:
+    build-and-test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up Python
+              uses: actions/setup-python@v4
+              with:
+                  python-version: '3.12'
+            
+            - name: Install dependencies
+              run: |
+                python -m pip install --upgrade pip
+                pip install -r requirements.txt
+
+            - name: Run tests
+              env: 
+                PYTHONPATH: ${{ github.workspace }}/src
+              run: |
+                pytest --maxfail=1 --disable-warnings -q
+
+            - name: Run Streamlit app
+              run: |
+                cd src
+                timeout 10s streamlit run ./streamlit_app.py --server.headless true || echo "Streamlit app exited with code $?"
+
+
+
+    deploy-staging:
+        needs: build-and-test
+        if: github.ref == 'refs/heads/dev'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Login to Azure
+              uses: azure/login@v1
+              with:
+                  creds: ${{ secrets.AZURE_CREDENTIALS_STAGING }}
+
+            - name: Build and deploy to Azure Web App
+              uses: azure/webapps-deploy@v2
+              with:
+                app-name: 'damian-capdevila-staging'
+                publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_STAGING }}
+
+    deploy-production:
+        needs: build-and-test
+        if: github.ref == 'refs/heads/main'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Login to Azure
+              uses: azure/login@v1
+              with:
+                  creds: ${{ secrets.AZURE_CREDENTIALS_PRODUCTION }}
+
+            - name: Build and deploy to Azure Web App
+              uses: azure/webapps-deploy@v2
+              with:
+                app-name: 'damian-capdevila-production'
+                publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PRODUCTION }}
+
+
