@@ -33,16 +33,15 @@ jobs:
           damiancapdevila/damian-capdevila-website:${{ github.sha }}
           damiancapdevila/damian-capdevila-website:latest
 
-    - name: Set Web App Name
-      run: |
-        if [ "${{ github.ref }}" = "refs/heads/main" ]; then
-          echo "AZURE_WEBAPP_NAME=damian-capdevila-production" >> $GITHUB_ENV
-        else
-          echo "AZURE_WEBAPP_NAME=damian-capdevila-staging" >> $GITHUB_ENV
-        fi
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS_STAGING }}
 
-    - name: Deploy to Azure Web App
+    - name: Restart Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        app-name: 'damian-capdevila-staging'
         images: 'damiancapdevila/damian-capdevila-website:latest'
+
+
