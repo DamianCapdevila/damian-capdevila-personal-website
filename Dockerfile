@@ -23,18 +23,11 @@ COPY . .
 # Expose the port Streamlit runs on
 EXPOSE 8000
 
-# Set the PATH environment variable to include /usr/local/bin
-ENV PATH="/usr/local/bin:${PATH}"
+# Set the PATH environment variable to include /root/.local/bin
+ENV PATH="/root/.local/bin:${PATH}"
 
-# Debugging steps
-RUN which streamlit
-RUN echo $PATH
+# Install Streamlit
+RUN pip install --user streamlit
 
 # Run the application
-CMD ["/usr/local/bin/streamlit", "run", "src/streamlit_app.py", "--server.port=8000", "--server.address=0.0.0.0"]
-
-
-
-
-
-
+CMD ["python", "-m", "streamlit", "run", "src/streamlit_app.py", "--server.port=8000", "--server.address=0.0.0.0"]
