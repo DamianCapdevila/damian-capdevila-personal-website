@@ -36,12 +36,19 @@ jobs:
     - name: Login to Azure
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS_STAGING }}
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Restart Azure Web App
+    - name: Deploy to Azure Web App (Staging)
+      if: github.ref == 'refs/heads/dev'
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'damian-capdevila-staging'
         images: 'damiancapdevila/damian-capdevila-website:latest'
 
+    - name: Deploy to Azure Web App (Production)
+      if: github.ref == 'refs/heads/main'
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'damian-capdevila-production'
+        images: 'damiancapdevila/damian-capdevila-website:latest'
 
