@@ -1,4 +1,4 @@
-name: Streamlit CI/CD
+name: CI Tests
 
 on:
     push:

@@ -1,14 +1,15 @@
 name: Build and Push Docker Image
 
 on:
-  push:
-    branches:
-      - main
-      - dev
+  workflow_run:
+    workflows: ["CI Tests"]
+    types:
+      - completed
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
     - uses: actions/checkout@v2
 
@@ -18,12 +19,6 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Set up environment variables
-      run: |
-        echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
-        echo "CV_PRESALES_URL=${{ secrets.CV_PRESALES_URL }}" >> $GITHUB_ENV
-        echo "CV_SOFTWARE_URL=${{ secrets.CV_SOFTWARE_URL }}" >> $GITHUB_ENV
-
     - name: Build and push Docker image
       uses: docker/build-push-action@v2
       with:
@@ -32,6 +27,10 @@ jobs:
         tags: |
           damiancapdevila/damian-capdevila-website:${{ github.sha }}
           damiancapdevila/damian-capdevila-website:latest
+        build-args: |
+          OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+          CV_PRESALES_URL=${{ secrets.CV_PRESALES_URL }}
+          CV_SOFTWARE_URL=${{ secrets.CV_SOFTWARE_URL }}
 
     - name: Login to Azure
       uses: azure/login@v1
