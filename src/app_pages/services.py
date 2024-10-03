@@ -26,7 +26,7 @@ with col3:
         st.write(DURATION_TEXT.format(RESUME_REVIEW_DURATION))
         st.write(PRICE_TEXT.format(RESUME_REVIEW_PRICE))
         st.write(RESUME_REVIEW_TEXT)
-        if st.button(BOOK_RESUME_REVIEW_TEXT, type="secondary", use_container_width=True, url=RESUME_REVIEW_URL):
+        if st.button(BOOK_RESUME_REVIEW_TEXT, type="secondary", use_container_width=True):
             st.popover("Book an initial consultation first! Thanks✨")
 
 # Regular Consultation
@@ -36,7 +36,7 @@ with col2:
         st.write(DURATION_TEXT.format(REGULAR_CONSULTATION_DURATION))
         st.write(PRICE_TEXT.format(REGULAR_CONSULTATION_PRICE))
         st.write(REGULAR_CONSULTATION_TEXT)
-        if st.button(BOOK_REGULAR_CONSULTATION_TEXT, type="secondary", use_container_width=True, url=REGULAR_CONSULTATION_URL):
+        if st.button(BOOK_REGULAR_CONSULTATION_TEXT, type="secondary", use_container_width=True):
             st.popover("Book an initial consultation first! Thanks✨")
 
 # LinkedIn Profile Review
@@ -46,7 +46,7 @@ with col4:
         st.write(DURATION_TEXT.format(LINKEDIN_REVIEW_DURATION))
         st.write(PRICE_TEXT.format(LINKEDIN_REVIEW_PRICE))
         st.write(LINKEDIN_REVIEW_TEXT)
-        if st.button(BOOK_LINKEDIN_REVIEW_TEXT, type="secondary", use_container_width=True, url=LINKEDIN_REVIEW_URL):
+        if st.button(BOOK_LINKEDIN_REVIEW_TEXT, type="secondary", use_container_width=True):
             st.popover("Book an initial consultation first! Thanks✨")
 
 st.subheader("Frequently Asked Questions", anchor="FAQ", divider=True)
